@@ -20,6 +20,7 @@ export default (state = defaultState, action) => {
               title: book.title,
               author: book.author,
               isbn: book.isbn,
+              loanedToUser: book.loanedToUser.length > 0 ? book.loanedToUser[0] : undefined,
             },
           })
         ), state.formattedEntries),

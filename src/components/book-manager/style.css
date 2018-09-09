@@ -1,0 +1,25 @@
+.panel a {
+  text-decoration: none !important;
+}
+
+:not(.collapsed) .panel-heading {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #dcdcdc !important;
+}
+
+.collapsed .panel-heading {
+  border-bottom: 0px !important;
+}
+
+.book-title {
+  color: #333333;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.book-status {
+  color: #333333;
+  font-weight: bold;
+  float: right;
+  font-size: 15px;
+}
