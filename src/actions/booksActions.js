@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { books } from '../constants/_ActionTypes';
 
-const baseURL = 'https://floating-castle-22315.herokuapp.com';
+const baseURL = 'https://bookshelf--api.herokuapp.com';
 
 export const fetchBooks = () => (dispatch) => {
   axios({
