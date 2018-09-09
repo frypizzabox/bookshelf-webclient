@@ -7,7 +7,7 @@ import { userProps, bookProps } from '../../../constants/_PropTypes';
 import './style.css';
 
 const DashboardGrid = ({
-  users, books, fetchUsers, fetchBooks,
+  users, books, fetchUsers, fetchBooks, loanBook, returnBook,
 }) => {
   fetchUsers();
   fetchBooks();
@@ -20,6 +20,8 @@ const DashboardGrid = ({
             <BookManager
               books={books}
               users={users}
+              loanBook={loanBook}
+              returnBook={returnBook}
             />
           </Col>
         </Row>
@@ -34,6 +36,8 @@ DashboardGrid.propTypes = {
   books: PropTypes.arrayOf(bookProps),
   fetchUsers: PropTypes.func,
   fetchBooks: PropTypes.func,
+  loanBook: PropTypes.func,
+  returnBook: PropTypes.func,
 };
 
 DashboardGrid.defaultProps = {
@@ -41,6 +45,8 @@ DashboardGrid.defaultProps = {
   books: [],
   fetchUsers: () => {},
   fetchBooks: () => {},
+  loanBook: () => {},
+  returnBook: () => {},
 };
 
 export default DashboardGrid;

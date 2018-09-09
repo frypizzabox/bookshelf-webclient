@@ -18,4 +18,44 @@ export const fetchUsers = () => (dispatch) => {
     .catch(() => {});
 };
 
+export const loanBook = (userId, bookId) => (dispatch) => {
+  if (userId !== undefined && bookId !== undefined) {
+    axios({
+      method: 'post',
+      baseURL,
+      url: `/users/${userId}/loan`,
+      data: {
+        bookId,
+      },
+    })
+      .then(({ data }) => {
+        dispatch({
+          type: users.upsert.entries,
+          payload: data,
+        });
+      })
+      .catch(() => {});
+  }
+};
+
+export const returnBook = (userId, bookId) => (dispatch) => {
+  if (userId !== undefined && bookId !== undefined) {
+    axios({
+      method: 'post',
+      baseURL,
+      url: `/users/${userId}/return`,
+      data: {
+        bookId,
+      },
+    })
+      .then(({ data }) => {
+        dispatch({
+          type: users.upsert.entries,
+          payload: data,
+        });
+      })
+      .catch(() => {});
+  }
+};
+
 export default {};
