@@ -4,7 +4,6 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import NavBar from '../navbar';
 import BookManager from '../../book-manager';
 import { userProps, bookProps } from '../../../constants/_PropTypes';
-import './style.css';
 
 const DashboardGrid = ({
   users, books, fetchUsers, fetchBooks, loanBook, returnBook,
@@ -29,7 +28,6 @@ const DashboardGrid = ({
     </React.Fragment>
   );
 };
-
 
 DashboardGrid.propTypes = {
   users: PropTypes.arrayOf(userProps),

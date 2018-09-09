@@ -3,7 +3,7 @@
 }
 
 :not(.collapsed) .panel-heading {
-  background-color: #f7f8fb;
+  background-color: #f8f8f8;
   border-bottom: 1px solid #dcdcdc !important;
 }
 

@@ -13,7 +13,9 @@ const NavBar = () => (
         <Navbar.Brand>BookShelf</Navbar.Brand>
       </Navbar.Header>
       <Nav pullRight>
-        <NavItem eventKey={1} onClick={() => {}}>GitHub</NavItem>
+        <NavItem eventKey={1} href="https://github.com/frypizzabox/bookshelf-webclient">
+          GitHub
+        </NavItem>
       </Nav>
     </Navbar>
   </React.Fragment>
