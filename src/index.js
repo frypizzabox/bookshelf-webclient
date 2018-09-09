@@ -5,6 +5,9 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers';
+import Dashboard from './containers/Dashboard';
+import './assets/css/bootstrap.css';
+import './assets/css/bootstrap-theme.css';
 
 /* Redux Store */
 const store = createStore(
@@ -15,7 +18,7 @@ const store = createStore(
 /* React Router */
 ReactDOM.render(
   <Provider store={store}>
-    <div />
+    <Dashboard />
   </Provider>,
   document.getElementById('root'),
 );
