@@ -26,6 +26,7 @@ export default (state = defaultState, action) => {
         ), state.formattedEntries),
       };
     }
+
     default:
       break;
   }

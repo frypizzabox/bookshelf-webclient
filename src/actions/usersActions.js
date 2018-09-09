@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { users } from '../constants/_ActionTypes';
+import { users, books } from '../constants/_ActionTypes';
 
 const baseURL = 'https://floating-castle-22315.herokuapp.com';
 
@@ -18,7 +18,7 @@ export const fetchUsers = () => (dispatch) => {
     .catch(() => {});
 };
 
-export const loanBook = (userId, bookId) => (dispatch) => {
+export const loanBook = (userId, bookId) => (dispatch, getState) => {
   if (userId !== undefined && bookId !== undefined) {
     axios({
       method: 'post',
@@ -29,6 +29,12 @@ export const loanBook = (userId, bookId) => (dispatch) => {
       },
     })
       .then(({ data }) => {
+        const book = getState().books.entries[bookId];
+        book.loanedToUser.push(userId);
+        dispatch({
+          type: books.upsert.entries,
+          payload: [book],
+        });
         dispatch({
           type: users.upsert.entries,
           payload: data,
@@ -38,7 +44,7 @@ export const loanBook = (userId, bookId) => (dispatch) => {
   }
 };
 
-export const returnBook = (userId, bookId) => (dispatch) => {
+export const returnBook = (userId, bookId) => (dispatch, getState) => {
   if (userId !== undefined && bookId !== undefined) {
     axios({
       method: 'post',
@@ -49,6 +55,12 @@ export const returnBook = (userId, bookId) => (dispatch) => {
       },
     })
       .then(({ data }) => {
+        const book = getState().books.entries[bookId];
+        book.loanedToUser = [];
+        dispatch({
+          type: books.upsert.entries,
+          payload: [book],
+        });
         dispatch({
           type: users.upsert.entries,
           payload: data,
