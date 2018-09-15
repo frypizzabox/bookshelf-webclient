@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "facebook-sdk-promise": "^1.2.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-bootstrap": "^0.32.4",
@@ -20,7 +21,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^5.5.0",
+    "ajv": "^6.5.3",
+    "eslint": "^4.1.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
